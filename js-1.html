@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Assignment 1</title>
+</head>
+<body>
+   
+    <script>
+       function fC(amount, currencyCode) {
+        let locale='';
+        switch (currencyCode) {
+        case 'INR':
+          locale = 'en-IN';
+          break;
+        case 'USD':
+          locale = 'en-US';
+          break;
+        case 'EUR':
+          locale = 'de-DE';
+          break;
+        default:
+           return console.log('Wrong currancy'); 
+      }
+        return new Intl.NumberFormat(locale, {
+             style: 'currency',
+            currency: currencyCode
+            }).format(amount);
+}
+
+console.log(fC(1234567.89, 'INR')); 
+
+console.log(fC(1234567.89, 'USD')); 
+
+console.log(fC(1234567.89, 'EUR')); 
+    </script>
+    
+</body>
+</html>
