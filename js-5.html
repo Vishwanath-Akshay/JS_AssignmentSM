@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jS-Assignment 5</title>
+</head>
+<body>
+    <script>
+        function evaluateConditions(obj){
+        if(obj.age>18 && obj.hasLicense){
+           return 'Eligible to drive';
+        }
+        if(obj.temperature>30 || obj.humidity >70){
+            return 'Warning: High discomfort level'
+        }
+        if(obj.role === 'admin' || obj.role==='editor' && obj.isActive){
+            return "Access granted";
+        }
+        } 
+
+        const obj ={
+            name:'Akshay',
+            age : 17 ,
+            hasLicense: true,
+            temperature: 32,
+            humidity: 65,
+            role: "admin",
+            isActive: true,
+            isRaining: false,
+            isSunny: true,
+            hasPassword: true
+        }
+        console.log(evaluateConditions(obj));
+
+        
+    </script>
+    
+</body>
+</html>
