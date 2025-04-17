@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Assignment 6</title>
+</head>
+<body>
+    <script>
+    
+       function createCalculator(){
+        const obj1={
+            addition :function(a,b){
+            return a+b;
+            } ,
+            subs : function(a,b){
+            return a-b;
+            },
+            mul : function(a,b){
+                return a*b;
+            },
+            div :function(a,b){
+                return a/b ;
+             }
+        }
+        return obj1;
+       }
+       const obj2=createCalculator();
+       console.log(obj2.addition(60,9));
+       console.log(obj2.subs(100,31));
+       console.log(obj2.mul(69,1));
+       console.log(obj2.div(138,2));
+
+    </script>
+</body>
+</html>
