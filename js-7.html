@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+function Book(title, author, ISBN) {
+    this.title = title;
+    this.author = author;
+    this.ISBN = ISBN;
+    this.isBorrowed = false;
+
+    this.borrow = function () {
+        if (!this.isBorrowed) {
+            this.isBorrowed = true;
+            console.log(`${this.title} has been borrowed.`);
+        } else {
+            console.log(`${this.title} is already borrowed.`);
+        }
+    };
+
+    this.returnBook = function () {
+        if (this.isBorrowed) {
+            this.isBorrowed = false;
+            console.log(`${this.title} has been returned.`);
+        } else {
+            console.log(`${this.title} wasn't borrowed.`);
+        }
+    };
+}
+
+function Library() {
+    this.books = [];
+
+    this.addBook = function (book) {
+        this.books.push(book);
+        console.log(`Added "${book.title}" to the library.`);
+    };
+
+    this.findBookByISBN = function (isbn) {
+        return this.books.find(book => book.ISBN === isbn);
+    };
+
+    this.listAvailableBooks = function () {
+        return this.books.filter(book => !book.isBorrowed);
+    };
+
+    this.listBorrowedBooks = function () {
+        return this.books.filter(book => book.isBorrowed);
+    };
+}
+
+const book1 = new Book("1984", "George Orwell", "12345");
+const book2 = new Book("To Kill a Mockingbird", "Harper Lee", "67890");
+
+const library = new Library();
+
+library.addBook(book1);
+library.addBook(book2);
+
+book1.borrow();
+console.log("Available books:", library.listAvailableBooks());
+console.log("Borrowed books:", library.listBorrowedBooks());
+
+book1.returnBook();
+console.log("Available books:", library.listAvailableBooks());
+
+    </script>
+</body>
+</html>
