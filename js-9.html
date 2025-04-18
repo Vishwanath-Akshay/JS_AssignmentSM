@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Counter</title>
+  
+</head>
+<body>
+    <style>
+        body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.counter-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+#display {
+  font-size: 48px;
+  margin: 20px 0;
+  color: #333;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#increment {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#increment:hover {
+  background-color: #45a049;
+}
+
+#decrement {
+  background-color: #f44336;
+  color: white;
+}
+
+#decrement:hover {
+  background-color: #da190b;
+}
+    </style>
+  <div class="counter-container">
+    <h1>Counter</h1>
+    <div id="display">0</div>
+    <div class="buttons">
+      <button id="decrement">Decrement</button>
+      <button id="increment">Increment</button>
+    </div>
+  </div>
+
+  <script>
+
+let count = 0;
+
+const display = document.getElementById("display");
+const incrementBtn = document.getElementById("increment");
+const decrementBtn = document.getElementById("decrement");
+
+function updateDisplay() {
+  display.textContent = count;
+}
+
+incrementBtn.addEventListener("click", () => {
+  count++;
+  updateDisplay();
+});
+
+decrementBtn.addEventListener("click", () => {
+  if (count > 0) {
+    count--;
+    updateDisplay();
+  }
+});
+
+  </script>
+</body>
+</html>
