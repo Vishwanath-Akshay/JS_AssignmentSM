@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 11</title>
+</head>
+<body>
+    <script>
+        function groupByCategory(items, categoryKey) {
+    const grouped = {};
+
+    for (const item of items) {
+        const key = item[categoryKey];
+
+        if (!grouped[key]) {
+            grouped[key] = [];
+        }
+
+        grouped[key].push(item);
+    }
+
+    return grouped;
+}
+const products = [
+  { name: 'Laptop', category: 'Electronics', price: 1200 },
+  { name: 'T-Shirt', category: 'Apparel', price: 25 },
+  { name: 'Mouse', category: 'Electronics', price: 30 },
+  { name: 'Jeans', category: 'Apparel', price: 70 },
+];
+
+const grouped = groupByCategory(products, 'category');
+console.log(grouped);
+
+
+    </script>
+</body>
+</html>
