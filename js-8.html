@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>js 8</title>
+</head>
+<body>
+<div id="container">
+  <h1>My List</h1>
+  <ul id="myList">
+    <li class="item">Item 1</li>
+    <li class="item">Item 2</li>
+    <li class="item">Item 3</li>
+  </ul>
+  <button id="addButton">Add Item</button>
+  <script>
+  
+const addButton = document.getElementById("addButton");
+const myList = document.getElementById("myList");
+
+
+function createListItem(text) {
+    const li = document.createElement("li");
+    li.textContent = text;
+    li.className = "item";
+
+ 
+    li.addEventListener("click", function () {
+        li.remove();
+    });
+
+    return li;
+}
+
+addButton.addEventListener("click", function () {
+    const newItem = createListItem("New Item");
+    myList.appendChild(newItem);
+});
+
+document.querySelectorAll("#myList .item").forEach(item => {
+    item.addEventListener("click", function () {
+        item.remove();
+    });
+});
+
+  </script>
+
+</div>
+
+</body>
+</html>
