@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Assignment-2</title>
+</head>
+<body>
+    <script>
+        function findLongestPalindrome(str) {
+    if (str.length < 1) return "";
+
+    let start = 0;
+    let end = 0;
+
+    function expandAroundCenter(left, right) {
+        while (left >= 0 && right < str.length && str[left] === str[right]) {
+            left--;
+            right++;
+        }
+        return [left + 1, right - 1];
+    }
+
+    for (let i = 0; i < str.length; i++) {
+      
+        let [left1, right1] = expandAroundCenter(i, i);
+        
+        let [left2, right2] = expandAroundCenter(i, i + 1);
+
+        if (right1 - left1 > end - start) {
+            start = left1;
+            end = right1;
+        }
+
+        if (right2 - left2 > end - start) {
+            start = left2;
+            end = right2;
+        }
+    }
+
+    return str.slice(start, end + 1);
+}
+console.log(findLongestPalindrome("racecar"));     
+console.log(findLongestPalindrome("banana"));       
+console.log(findLongestPalindrome("cbbd"));        
+console.log(findLongestPalindrome("hello"));  
+    </script>
+</body>
+</html>
