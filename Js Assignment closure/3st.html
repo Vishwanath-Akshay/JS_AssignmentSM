@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function objectsDelayed(items, delay) {
+  for (let item of items) {
+    setTimeout( function() {
+      item.process();
+    }, delay );
+  }
+}
+
+
+
+const items = [
+            { 
+                name: "Alpha", 
+                process: function() { 
+                console.log(`Processing: ${this.name}`); 
+                } 
+            }   
+              ,
+                { 
+                    name: "Beta", 
+                    process: function() { 
+                    console.log(`Task for ${this.name} done.`); 
+                    } 
+                }
+];
+
+processObjectsDelayed(items, 5000); // After 1 second, both process methods will be called
+// When you call a function, what will this point to?
+    </script>
+</body>
+</html>
+

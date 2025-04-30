@@ -1,0 +1,33 @@
+<script>
+//this function is factory function meaning which returns the new object 
+function createUniqueCounter() {
+  let count = 0; 
+ //incre and getvalue function even remeber their vairables
+  return {
+    increment: function (){
+      count++;
+      return count;
+    },
+    getValue: function () {
+      return count;
+    }
+  };
+}
+const counter1 = createUniqueCounter();
+const counter2 = createUniqueCounter();
+
+console.log(counter1.getValue()); 
+console.log(counter1.increment()); 
+console.log(counter1.getValue());  
+
+console.log(counter2.increment()); 
+console.log(counter2.getValue());  
+console.log(counter2.increment()); 
+
+console.log(counter1.getValue());  
+// Trying to directly access count - this will cause an error
+
+// console.log(count);
+// Trying to modify count from outside - this wont work as intended
+// count = 10;
+</script>

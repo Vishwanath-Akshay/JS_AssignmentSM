@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function delayedGreeter(names) {
+            //var is function scope 
+            //creating a closure
+            //can use let insted of var
+            for (let i = 0; i < names.length; i++) {
+                setTimeout(function() {
+            console.log(`Hello, ${names[i]}!`);
+                }, i * 1000);
+        }
+        }
+        delayedGreeter(['Alice', 'Bob','Charlie']);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      console.log(myvar);
+     let myvar=10;
+      console.log(myvar);
+        function reveal(){
+            console.log("inside",myvar);
+             myvar=20;
+            //use let
+            console.log("after deleclaration",myvar);
+        }
+        reveal();
+        console.log("after function",myvar);
+    </script>
+</body>
+</html>
