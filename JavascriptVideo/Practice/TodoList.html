@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Todo List</p>
+    <input class="input-value" placeholder="Enter-List">
+    <button
+     onclick=" add()
+                ">Add</button>
+
+    <div class="text"></div>
+
+
+    <script>
+ const array=[];
+function render(){
+    let  addhtml="";
+ for(let i=0;i<array.length;i++){
+        const todo=array[i];
+        const html=`<p>${todo} <button onclick=" array.splice(${i},1);
+            render();">Delete</button></p>`;
+        
+         addhtml += html;
+         document.querySelector('.text').innerHTML=addhtml;
+    }
+}
+  function add(){
+   
+   const Text = document.querySelector('.input-value').value;
+    array.push(Text);
+    console.log(array);
+    document.querySelector('.input-value').value='';
+    
+   render();
+    
+    
+    
+  }
+  
+
+    </script>
+</body>
+</html>
