@@ -1,28 +1,40 @@
 console.log("Hello");
 //array or list
-const products=[
-    //1 object
-    {
-        image : './images/products/Cricketbat.webp',
-        name : 'Bold Fit Cricket Bat- Made in india',
-       rating: {
-            stars: './images/ratings/rating-50.png',
-            count: 253
-        },
-       priceinC : 1486 
+// const products=[
+//     //1 object
+//     {
+//         image : './images/products/Cricketbat.webp',
+//         name : 'Bold Fit Cricket Bat- Made in india',
+//        rating: {
+//             stars: './images/ratings/rating-50.png',
+//             count: 253
+//         },
+//        priceinC : 1486 
 
-    },
-    //2 object
-    {
-        image: 'images/products/intermediate-composite-basketball.jpg',
-        name: 'Intermediate Size Basketball',
-        rating :{
-            stars: 'images/ratings/rating-40.png',
-            count:127
-        },
-        priceinC:2095
-    }
-];
+//     },
+//     //2 object
+//     {
+//         image: './images/products/intermediate-composite-basketball.jpg',
+//         name: 'Intermediate Size Basketball',
+//         rating :{
+//             stars: 'images/ratings/rating-40.png',
+//             count:127
+//         },
+//         priceinC:2095
+//      },
+//      //3 object, product
+//      {
+//         image: './images/products/backpack.jpg',
+//         name : 'Black Color Backpack' ,
+//         rating :{
+//             stars:'images/ratings/rating-45.png',
+//             count: 269
+//         },
+//         priceinC : 1299,
+
+//      }
+    
+// ];
 
 let productsHTML='';
 
@@ -36,7 +48,7 @@ products.forEach((product)=>{
           </div>
           <div class ="product-rating-container">
            
-              <img class="product-rating-stars" src="${product.rating.stars}">
+              <img class="product-rating-stars" src="images/">
               <div class="product-rating-count link-primary">
               ${product.rating.count}
               </div>
